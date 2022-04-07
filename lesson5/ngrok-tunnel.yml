@@ -1,0 +1,7 @@
+authtoken: 1z8MEx3LMxnVxjdSq3b1CA1jN9F_3ES8esjYotxM67tZPDFzL
+tunnels:
+  my_tunnel_name:
+    labels:
+      - edge=edghts_26GXw5ITKTvS0L41KPiNktgoQ4R
+    addr: 3001
+region: us
