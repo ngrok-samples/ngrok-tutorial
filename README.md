@@ -7,8 +7,11 @@ Requirements:
 
 
 Variables:
+
+```
 export SUBDOMAIN=test-fred
 export TUTORIAL_HOME=$PWD
+```
 
 Lessons:
 
@@ -69,22 +72,18 @@ ngrok tunnel 3003 --region us --label edge=$EDGE
 
 cd $TUTORIAL_HOME/lesson1
 
-- Enforce IP Restrictions
-ngrok http 3001 --subdomain=$SUBDOMAIN --cidr-allow $(curl http://ifconfig.me/ip)/32
-- Enrich Requests with Geo Location
-ngrok http 3001 --subdomain=$SUBDOMAIN --request-header-add "country: ${.ngrok.geo.country_code}"
-- Improve Header Security
-ngrok http 3001 --subdomain=$SUBDOMAIN --response-header-add "content-security-policy: self;"
-- Add Mutual TLS Authentication
-ngrok http 3001 --subdomain=$SUBDOMAIN --mutual-tls-cas=[root-ca.pem]
+- Enforce IP Restrictions: `ngrok http 3001 --subdomain=$SUBDOMAIN --cidr-allow $(curl http://ifconfig.me/ip)/32`
+- Enrich Requests with Geo Location: `ngrok http 3001 --subdomain=$SUBDOMAIN --request-header-add "country: ${.ngrok.geo.country_code}"`
+- Improve Header Security: `ngrok http 3001 --subdomain=$SUBDOMAIN --response-header-add "content-security-policy: self;"`
+- Add Mutual TLS Authentication: `ngrok http 3001 --subdomain=$SUBDOMAIN --mutual-tls-cas=[root-ca.pem]`
 
 # Lesson 8
-- Enable SSH Access
-ngrok tcp 22
+- Enable SSH Access: `ngrok tcp 22`
+
 - Enable Database Access with CIDR
 
-```
-cd $TUTORIAL_HOME/lesson8
-docker-compose up
-ngrok tcp 3306 --cidr-allow $(curl http://ifconfig.me/ip)/32
-```
+    ```
+    cd $TUTORIAL_HOME/lesson8
+    docker-compose up
+    ngrok tcp 3306 --cidr-allow $(curl http://ifconfig.me/ip)/32
+    ```
