@@ -5,9 +5,9 @@ For the lesson, navigate back to the `lesson2` directory and then run the `ngrok
 
 ```bash
 cd $TUTORIAL_HOME/lesson2
-ngrok http --subdomain=$SUBDOMAIN file://$(pwd) --oauth=github
+ngrok http --domain=$DOMAIN file://$(pwd) --oauth=github
 ```
-When you navigate to the `https://<insert_subdomain_here>.ngrok.app/hello.html` you will first be greeted by a GitHub login and then authorizion form before accessing the webpage.
+When you navigate to the `https://<insert_domain_here>/hello.html` you will first be greeted by a GitHub login and then authorizion form before accessing the webpage.
 
 Now, to add this same authentication to an app running on a port the syntax will be similar. Although, instead of pointing to `file://` you'll point to a port. In the case of this lesson, the Node application is running on port `3001`
 
@@ -20,20 +20,20 @@ Next, we'll try out a few of the additional options that can be paired with `--o
 
 ## Google OAuth: Restrict Access to Domain
 ```bash
-ngrok http 3001 --subdomain=$SUBDOMAIN --oauth=google --oauth-allow-domain=ngrok.com
+ngrok http 3001 --domain=$DOMAIN --oauth=google --oauth-allow-domain=ngrok.com
 ```
 There are times when authenticating a user through Google isn't enough and we want to only allow users from a specific domain. We can do this by passing the `--oauth-allow-domain` argument with the domain we wish to allow. In the example above, we're allowing anyone authenticated with a `ngrok.com` account. 
 
 ## Google OAuth: Allow Only Email
 ```bash
-ngrok http 3001 --subdomain=$SUBDOMAIN --oauth=google --oauth-allow-email=<email>
+ngrok http 3001 --domain=$DOMAIN --oauth=google --oauth-allow-email=<email>
 ```
 When you want to only allow specific users you can also do that by passing the `--oauth-allow-email` argument. 
 
 
 ## GitHub OAuth: Allow Only Repo Access
 ```bash
-ngrok http 3001 --subdomain=$SUBDOMAIN --oauth=github --oauth-scope=repo
+ngrok http 3001 --domain=$DOMAIN --oauth=github --oauth-scope=repo
 ```
 When using GitHub OAuth you can also limit access to those who have access to a specific repo by passing the `--oauth-scope=repo` argument. 
 

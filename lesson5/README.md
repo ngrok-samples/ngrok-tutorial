@@ -7,7 +7,7 @@ To verify that the incoming webhooks are coming from GitHub you'll add two argum
 
 ```bash
 npm i && node app
-ngrok http 3002 --subdomain=$SUBDOMAIN --verify-webhook=github --verify-webhook-secret=12345
+ngrok http 3002 --domain=$DOMAIN --verify-webhook=github --verify-webhook-secret=12345
 ```
 
 Admittedly, this can be a bit of a chicken-and-egg scenario. To register the webhook in GitHub you need to know the destination--the url created by running the ngrok command. And, to run the ngrok command you need to know the value for `--verify-webhook-secret`. Assumig you're using a free ngrok account, you'll need to first run the commands above to generate your ngrok URL. When you do that you choose the value for the `--verify-webhook-secret`. Then, when you register the webhook in GitHub copy the value you chose in the command line and use it for the Secret value in GitHub.

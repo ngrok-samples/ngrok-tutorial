@@ -4,7 +4,7 @@ This lesson shows how to run ngrok to create a tunnel to a web server running in
 
 ```bash
 npm i && node app
-ngrok http 8080 --subdomain=$SUBDOMAIN
+ngrok http 8080 --domain=$DOMAIN
 ```
 
-This will create a tunnel at the subdomain specified at $SUBDOMAIN.
+This will create a tunnel at the domain specified at $DOMAIN.

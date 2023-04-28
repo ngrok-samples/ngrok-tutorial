@@ -2,7 +2,7 @@
 This lesson shows that you don't even need a server or service running on a particular port. By using `file://$(pwd)` you create a tunnel to current directory.
 
 ```bash
-ngrok http --subdomain=$SUBDOMAIN file://$(pwd)
+ngrok http --domain=$DOMAIN file://$(pwd)
 ```
 
-After running this command navigate to the `https://<insert_subdomain_here>.ngrok.app/hello.html` to see the results.
+After running this command navigate to the `https://<insert_domain_here>/hello.html` to see the results.

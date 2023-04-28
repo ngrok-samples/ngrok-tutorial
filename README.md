@@ -9,7 +9,7 @@ Requirements:
 Variables:
 
 ```
-export SUBDOMAIN=test-fred
+export DOMAIN=test-fred.ngrok.dev
 export TUTORIAL_HOME=$PWD
 ```
 
