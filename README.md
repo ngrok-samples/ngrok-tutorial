@@ -22,4 +22,7 @@ Lessons:
 - [Lesson 5: Verify Webhook Signature](lesson5/README.md)
 - [Lesson 6: Production](lesson6/README.md)
 - [Lesson 7: Nifty tricks](lesson7/README.md)
-- [Lesson 8: Sipping CIDR](lesson8/README.md)
+- [Lesson 8: IP Restricting with CIDR](lesson8/README.md)
+- [Lesson 9: ngrok-go](lesson9/README.md)
+- [Lesson 10: ngrok-rs](lesson10/README.md)
+- [Lesson 11: Ingress Controller for Kubernetes](lesson11/README.md)
