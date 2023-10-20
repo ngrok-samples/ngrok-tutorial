@@ -24,17 +24,8 @@ ngrok http 3001 --domain=$DOMAIN --oauth=google --oauth-allow-domain=ngrok.com
 ```
 There are times when authenticating a user through Google isn't enough and we want to only allow users from a specific domain. We can do this by passing the `--oauth-allow-domain` argument with the domain we wish to allow. In the example above, we're allowing anyone authenticated with a `ngrok.com` account. 
 
-## Google OAuth: Allow Only Email
+## Google OAuth: Restrict Access to Email(s)
 ```bash
 ngrok http 3001 --domain=$DOMAIN --oauth=google --oauth-allow-email=<email>
 ```
-When you want to only allow specific users you can also do that by passing the `--oauth-allow-email` argument. 
-
-
-## GitHub OAuth: Allow Only Repo Access
-```bash
-ngrok http 3001 --domain=$DOMAIN --oauth=github --oauth-scope=repo
-```
-When using GitHub OAuth you can also limit access to those who have access to a specific repo by passing the `--oauth-scope=repo` argument. 
-
-*TODO: test this one out to verify behavior*
+When you want to only allow specific users you can also do that by passing the `--oauth-allow-email` argument.

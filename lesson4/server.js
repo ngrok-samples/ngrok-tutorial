@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 app.use(express.json())
 const fs = require("fs");
-const port = 3002;
+const port = 3001;
 const uuid = require("uuid");
 
 app.get('/users/:userId', function (req, res) {

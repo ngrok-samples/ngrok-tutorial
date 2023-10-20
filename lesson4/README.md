@@ -4,7 +4,7 @@ This lesson steps through working with a REST API.
 
 First, start the application with the following commands.
 ```
-npm i && node app
+npm i && node server
 ```
 
 ```
